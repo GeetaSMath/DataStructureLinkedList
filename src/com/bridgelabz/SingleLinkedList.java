@@ -1,5 +1,6 @@
 package com.bridgelabz;
 import java.util.*;
+
 public class SingleLinkedList {
 
     //Represent a node of the singly linked list
@@ -133,8 +134,8 @@ public class SingleLinkedList {
 
 
 
-        //Search nodes to the Beginning to End
-        slList.searchNode(30);
+        //Search nodes to the Given Position
+        slList.addAtPos(3, 40, slList.head);
 
         //Call the Displays Method
         slList.displayList();
