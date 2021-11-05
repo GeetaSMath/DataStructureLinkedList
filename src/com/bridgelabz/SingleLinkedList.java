@@ -1,24 +1,25 @@
 package com.bridgelabz;
 import java.util.*;
-
 public class SingleLinkedList {
+
     //Represent a node of the singly linked list
-        public static class Node{
-            private int data;
-            private Node next;
+    public static class Node{
+        private int data;
+        private Node next;
 
-            public Node(int x){
-                this.data = x;
-                this.next = null;
-            }
+        public Node(int x){
+            this.data = x;
+            this.next = null;
         }
+    }
 
-        //Represent the head and tail of the singly linked list
-        private Node head = null;
-        private Node tail = null;
 
-        //addNode() will add a new node to the list, Create a new node, Checks if the list is empty by using head address
-        public void addNode(int x){
+    //Represent the head and tail of the singly linked list
+    private Node head = null;
+    private Node tail = null;
+
+    //addNode() will add a new node to the list, Create a new node, Checks if the list is empty by using head address
+    public void addNode(int x){
         Node newNode = new Node(x);
 
         if (head == null){
@@ -30,8 +31,8 @@ public class SingleLinkedList {
         tail = newNode;
     }
 
-        //displayList() will display all the nodes
-        public void displayList(){
+    //displayList() will display all the nodes
+    public void displayList(){
         Node temp = head;
         if (head == null){
             System.out.println("Singly Linked List is Empty");
@@ -45,15 +46,29 @@ public class SingleLinkedList {
 
     }
 
-        public static void main(String[] args) {
+    //Add nodes to the list at Beginning
+    public void addToBegin(int x){
+        if (head == null){
+            this.head = new Node(x);
+        }else{
+            Node temp = new Node(x);
+            temp.next = head;
+            head = temp;
+        }
+    }
+
+
+
+    public static void main(String[] args) {
         SingleLinkedList slList = new SingleLinkedList();
 
-        //Add nodes to the list
-        slList.addNode(56);
-        slList.addNode(30);
-        slList.addNode(70);
+        //Add nodes to the list at Beginning
+        slList.addToBegin(70);
+        slList.addToBegin(30);
+        slList.addToBegin(56);
+
 
         //Call the Displays Method
         slList.displayList();
     }
-    }
+}
